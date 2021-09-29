@@ -1,0 +1,20 @@
+<p>calculator works!</p>
+<h3>Caculator</h3>
+<div>
+  <p>First Number</p><input type="number" (change)="getFirstNum($event.target.value)">
+</div>
+<div>
+  <p>Operator</p>
+  <select id="" (change)="getOperator($event.target.value)">
+    <option value="add"> + </option>
+    <option value="sub"> - </option>
+    <option value="multi"> * </option>
+    <option value="divide"> / </option>
+  </select>
+</div>
+<div>
+  <p>Second Number</p><input type="number" (change)="getSecondNum($event.target.value)">
+</div>
+<p>Result: {{getResult(caculator.firstNum,caculator.secondNum,caculator.operator)}}</p>
+
+
