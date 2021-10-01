@@ -41,7 +41,7 @@ export class CalculatorComponent implements OnInit {
     this.caculator.operator = operator;
     switch (operator) {
       case 'add':
-        return firstNum + secondNum;
+        return  Number(firstNum) + Number(secondNum);
         break;
       case 'sub':
         return firstNum - secondNum;
