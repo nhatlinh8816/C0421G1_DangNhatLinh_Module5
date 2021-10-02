@@ -1,0 +1,44 @@
+<div>
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" #name>
+  </div>
+  <div class="form-group">
+    <label>Grade:</label>
+    <br>
+    <input type="radio" value="1" class="btn-check" name="options-outlined" id="success-outlined1" autocomplete="off" checked #grade1>
+    <label class="btn btn-outline-success" for="success-outlined1">1</label>
+    <input type="radio" value="2" class="btn-check" name="options-outlined" id="success-outlined2" autocomplete="off" checked #grade2>
+    <label class="btn btn-outline-success" for="success-outlined2">2</label>
+    <input type="radio" value="3" class="btn-check" name="options-outlined" id="success-outlined3" autocomplete="off" checked #grade3>
+    <label class="btn btn-outline-success" for="success-outlined3">3</label>
+    <input type="radio" value="4" class="btn-check" name="options-outlined" id="success-outlined4" autocomplete="off" checked #grade4>
+    <label class="btn btn-outline-success" for="success-outlined4">4</label>
+    <input type="radio" value="5" class="btn-check" name="options-outlined" id="success-outlined5" autocomplete="off" checked #grade5>
+    <label class="btn btn-outline-success" for="success-outlined5">5</label>
+    <input type="radio" value="6" class="btn-check" name="options-outlined" id="success-outlined6" autocomplete="off" checked #grade6>
+    <label class="btn btn-outline-success" for="success-outlined6">6</label>
+    <input type="radio" value="7" class="btn-check" name="options-outlined" id="success-outlined7" autocomplete="off" checked #grade7>
+    <label class="btn btn-outline-success" for="success-outlined7">7</label>
+    <input type="radio" value="8" class="btn-check" name="options-outlined" id="success-outlined8" autocomplete="off" checked #grade8>
+    <label class="btn btn-outline-success" for="success-outlined8">8</label>
+    <input type="radio" value="9" class="btn-check" name="options-outlined" id="success-outlined9" autocomplete="off" checked #grade9>
+    <label class="btn btn-outline-success" for="success-outlined9">9</label>
+    <input type="radio" value="10" class="btn-check" name="options-outlined" id="success-outlined10" autocomplete="off" checked #grade10>
+    <label class="btn btn-outline-success" for="success-outlined10">10</label>
+  </div>
+  <br>
+   <button type="button" class="btn bg-success"
+           (click)="createRating(name.value,grade1.checked?grade1.value:
+                                          grade2.checked?grade2.value:
+                                          grade3.checked?grade3.value:
+                                          grade4.checked?grade4.value:
+                                          grade5.checked?grade5.value:
+                                          grade6.checked?grade6.value:
+                                          grade7.checked?grade7.value:
+                                          grade8.checked?grade8.value:
+                                          grade9.checked?grade9.value:
+                                          grade10.checked?grade10.value:'')">
+     Vote
+   </button>
+</div>

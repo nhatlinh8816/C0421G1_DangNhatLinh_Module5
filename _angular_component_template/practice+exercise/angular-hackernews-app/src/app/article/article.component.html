@@ -1,0 +1,37 @@
+<div class="container-fluid mt-1">
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="card border-primary mb-3 col-lg-5 mt-1" >
+      <div class="card-header">Today's article</div>
+      <div class="card-body text-primary">
+        <div *ngFor="let art of articles">
+          <a href="{{art.url}}" target="_blank">{{art.title}}</a>: <app-like></app-like>
+        </div>
+      </div>
+    </div>
+      <div class="card border-primary mb-3 col-lg-5 ms-2 mt-1" >
+        <div class="card-header">Article Information</div>
+        <div class="card-body text-primary">
+          <div>
+            <table>
+              <tr>
+                <td>Title:</td>
+                <td><textarea [(ngModel)]="article.title" cols="60"></textarea></td>
+              </tr>
+              <tr>
+                <td>Url:</td>
+                <td>
+                  <textarea [(ngModel)]="article.url" cols="60"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><button style="float: right" (click)="addNewArticle()">Add</button></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    <div class="col-lg-1"></div>
+  </div>
+</div>

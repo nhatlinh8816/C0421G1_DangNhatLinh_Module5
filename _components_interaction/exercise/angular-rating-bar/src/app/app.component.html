@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row mt-2">
+    <app-create-rating (ratingCreate)="getNewRating($event)"></app-create-rating>
+  </div>
+  <div class="row mt-2">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Grade</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor=" let items of rating,let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{items.name}}</td>
+        <td>{{items.grade}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
