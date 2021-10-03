@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "case-study-angular": {
+    "angular-countdown-timer-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/case-study-angular",
+            "outputPath": "dist/angular-countdown-timer-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "case-study-angular:build"
+            "browserTarget": "angular-countdown-timer-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "case-study-angular:build:production"
+              "browserTarget": "angular-countdown-timer-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "case-study-angular:build"
+            "browserTarget": "angular-countdown-timer-app:build"
           }
         },
         "test": {
@@ -110,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "case-study-angular:serve"
+            "devServerTarget": "angular-countdown-timer-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "case-study-angular:serve:production"
+              "devServerTarget": "angular-countdown-timer-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "case-study-angular",
+  "defaultProject": "angular-countdown-timer-app",
   "cli": {
-    "analytics": "f37b1aca-f854-42d4-992b-88818ce6e319"
+    "analytics": "adb0d2e7-242c-493f-9d26-efdbb9a7d467"
   }
 }

@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <div class="row">
+    <div th:replace="~{/common/sidebar::sidebar}"></div>
+    <div class="col-lg-10">
+      <div class="col-lg-12 text-center">
+        <h3>PLEASE EDIT INFORMATION</h3>
+      </div>
+      <form class="row g-3" th:object="${newEmployeeDto}" action="/employee/edit" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <div class="col-md-6">
+          <label for="name" class="form-label">Name</label>
+          <input input type="text" th:field="*{name}" class="form-control" id="name">
+          <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></td>
+        </div>
+        <div class="col-md-6">
+          <label for="dOb" class="form-label">Date Of Birth</label>
+          <input type="date" th:field="*{dOB}" class="form-control" id="dOb">
+          <td th:if="${#fields.hasErrors('dOB')}" th:errors="*{dOB}" class="text-danger"></td>
+        </div>
+        <div class="col-md-6">
+          <label for="idenNumber" class="form-label">Identity Number</label>
+          <input type="text" th:field="*{identityNumber}" class="form-control" id="idenNumber">
+          <td th:if="${#fields.hasErrors('identityNumber')}" th:errors="*{identityNumber}"
+              class="text-danger"></td>
+        </div>
+        <div class="col-md-6">
+          <label for="salary" class="form-label">Salary</label>
+          <input type="text" th:field="*{salary}" class="form-control" id="salary">
+          <p th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}" class="text-danger"></p>
+        </div>
+        <div class="col-md-6">
+          <label for="phoneNumber" class="form-label">Phone Number</label>
+          <input type="text" th:field="*{phoneNumber}" class="form-control" id="phoneNumber">
+          <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="text-danger"></td>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input type="text" th:field="*{email}" class="form-control" id="email">
+          <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></td>
+        </div>
+        <div class="col-md-6">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" th:field="*{address}" class="form-control" id="address">
+          <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="text-danger"></td>
+        </div>
+        <div class="col-md-6">
+          <label for="user" class="form-label">Account</label>
+          <input type="text" th:field="*{user.account}" class="form-control" id="user">
+          <td th:if="${#fields.hasErrors('user')}" th:errors="*{user}" class="text-danger"></td>
+        </div>
+        <div class="col-md-4">
+          <label for="inputDivision" class="form-label">Division</label>
+          <select id="inputDivision" class="form-select" th:field="*{division.id}">
+            <option th:each="divisionObj:${divisionList}"
+                    th:text="${divisionObj.name}"
+                    th:value="${divisionObj.id}">
+            </option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="inputDegree" class="form-label">Degree</label>
+          <select id="inputDegree" class="form-select" th:field="*{degree.id}">
+            <option th:each="degreeObj:${degreeList}"
+                    th:text="${degreeObj.name}"
+                    th:value="${degreeObj.id}">
+            </option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="inputPosition" class="form-label">Position</label>
+          <select id="inputPosition" class="form-select" th:field="*{position.id}">
+            <option th:each="positionObj:${positionList}"
+                    th:text="${positionObj.name}"
+                    th:value="${positionObj.id}">
+            </option>
+          </select>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-success text-white">Update</button>
+        </div>
+        <div class="col-12"></div>
+      </form>
+    </div>
+  </div>
+</div>
