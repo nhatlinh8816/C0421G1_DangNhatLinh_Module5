@@ -1,0 +1,20 @@
+<div class="card border-info">
+  <h3 class="card-header bg-info">Translate</h3>
+  <div class="card-body">
+    <h4 class="card-title">Result</h4>
+
+    <div *ngIf="dictionariesMeaning; else empty">
+      <div>
+        Word: {{dictionariesMeaning.word}}
+      </div>
+      <div>
+        Meaning: {{dictionariesMeaning.meaning}}
+      </div>
+    </div>
+
+    <ng-template #empty>
+      <p style="color: red">No data</p>
+    </ng-template>
+
+  </div>
+</div>
