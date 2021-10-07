@@ -1,0 +1,87 @@
+{
+  "degree": [
+    {
+      "id": 1,
+      "name": "Intermediate"
+    },
+    {
+      "id": 2,
+      "name": "College"
+    },
+    {
+      "id": 3,
+      "name": "Bachelor"
+    },
+    {
+      "id": 4,
+      "name": "Master"
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "Receptionist"
+    },
+    {
+      "id": 2,
+      "name": "Waiter"
+    },
+    {
+      "id": 3,
+      "name": "Specialist"
+    },
+    {
+      "id": 4,
+      "name": "Supervisor"
+    },
+    {
+      "id": 5,
+      "name": "Manager"
+    },
+    {
+      "id": 6,
+      "name": "Director"
+    }
+  ],"division": [
+  {
+    "id": 1,
+    "name": "Sale-Makerting"
+  },
+  {
+    "id": 2,
+    "name": "Administration"
+  },
+  {
+    "id": 3,
+    "name": "Service"
+  },
+  {
+    "id": 4,
+    "name": "Management"
+  }
+],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Linh",
+      "dOB": "1994-02-13",
+      "identityNum": "123",
+      "phoneNum": "123",
+      "email": "123",
+      "address": "Hà Nội",
+      "salary": 1000,
+      "degree": {
+        "id": 1,
+        "name": "Intermediate"
+      },
+      "position": {
+      "id": 4,
+      "name": "Supervisor"
+    },
+      "division": {
+        "id": 4,
+        "name": "Management"
+      }
+    }
+  ]
+}

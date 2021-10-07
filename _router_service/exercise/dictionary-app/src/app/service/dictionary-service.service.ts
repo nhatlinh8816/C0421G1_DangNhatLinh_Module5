@@ -24,7 +24,7 @@ export class DictionaryServiceService {
       if (dictionary.word === word){
         return dictionary;
       }
-      return null;
     }
+    return null;
   }
 }

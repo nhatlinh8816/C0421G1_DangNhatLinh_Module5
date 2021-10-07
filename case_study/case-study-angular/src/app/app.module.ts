@@ -11,14 +11,14 @@ import { CreateEmployeeComponent } from './employee-management/create-employee/c
 import { EditEmployeeComponent } from './employee-management/edit-employee/edit-employee.component';
 import { DeleteEmployeeComponent } from './employee-management/delete-employee/delete-employee.component';
 import { ListEmployeeComponent } from './employee-management/list-employee/list-employee.component';
-import { CreateServiceComponent } from './service-management/create-service/create-service.component';
-import { ListServiceComponent } from './service-management/list-service/list-service.component';
-import { EditServiceComponent } from './service-management/edit-service/edit-service.component';
-import { DeleteServiceComponent } from './service-management/delete-service/delete-service.component';
 import { ListContractComponent } from './contract-management/list-contract/list-contract.component';
 import { EditContractComponent } from './contract-management/edit-contract/edit-contract.component';
 import { DeleteContractComponent } from './contract-management/delete-contract/delete-contract.component';
 import { CreateContractComponent } from './contract-management/create-contract/create-contract.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,18 +31,19 @@ import { CreateContractComponent } from './contract-management/create-contract/c
     EditEmployeeComponent,
     DeleteEmployeeComponent,
     ListEmployeeComponent,
-    CreateServiceComponent,
-    ListServiceComponent,
-    EditServiceComponent,
-    DeleteServiceComponent,
     ListContractComponent,
     EditContractComponent,
     DeleteContractComponent,
-    CreateContractComponent
+    CreateContractComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
