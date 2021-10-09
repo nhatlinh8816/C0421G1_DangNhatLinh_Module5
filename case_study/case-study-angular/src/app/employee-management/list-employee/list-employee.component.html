@@ -24,7 +24,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let items of employees">
+  <tr *ngFor="let items of employees | paginate: { itemsPerPage: 1, currentPage: p }" >
     <td>{{items.id}}</td>
     <td>{{items.name}}</td>
     <td>{{items.dOB}}</td>
@@ -51,14 +51,7 @@
   </tbody>
 </table>
 <div class="row">
-  <div class="col-lg-4">
-    <a>Previous</a>
-    <span></span>
-    <a>Next</a>
-  </div>
-  <div class="col-lg-2">
-  </div>
-  <div class="col-lg-2"></div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 <!--modal-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

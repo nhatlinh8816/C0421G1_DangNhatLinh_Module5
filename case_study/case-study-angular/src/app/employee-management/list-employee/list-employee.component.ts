@@ -15,6 +15,7 @@ export class ListEmployeeComponent implements OnInit {
   employees: Employee []|any;
   id: number;
   name: string;
+  p: number = 1;
   constructor(private employeeServiceService: EmployeeServiceService, private router: Router) {
     this.employees = this.employeeServiceService.findAll().subscribe(next => {
       console.log(next);

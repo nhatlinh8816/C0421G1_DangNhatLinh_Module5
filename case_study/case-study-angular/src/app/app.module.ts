@@ -24,6 +24,7 @@ import { SidebarComponent } from './view-management/sidebar/sidebar.component';
 import { BodyComponent } from './view-management/body/body.component';
 import { FooterComponent } from './view-management/footer/footer.component';
 import { DetailEmployeeComponent } from './employee-management/detail-employee/detail-employee.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -55,7 +56,8 @@ import { DetailEmployeeComponent } from './employee-management/detail-employee/d
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

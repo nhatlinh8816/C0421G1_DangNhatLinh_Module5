@@ -83,6 +83,50 @@
         "id": 3,
         "name": "Specialist"
       }
+    },
+    {
+      "name": "Thi Van Anh Nguyen",
+      "dOB": "2021-10-07",
+      "identityNum": "1234567894",
+      "salary": 123,
+      "phoneNum": "0909363284",
+      "email": "vananh191090@gmail.com",
+      "address": "Ha Noi",
+      "division": {
+        "id": 2,
+        "name": "Administration"
+      },
+      "degree": {
+        "id": 2,
+        "name": "College"
+      },
+      "position": {
+        "id": 3,
+        "name": "Specialist"
+      },
+      "id": 16
+    },
+    {
+      "name": "Thi Van 1995 1233",
+      "dOB": "2021-10-23",
+      "identityNum": "1234567894",
+      "salary": 123123,
+      "phoneNum": "0909363284",
+      "email": "vananh191090@gmail.com",
+      "address": "Ha Noi",
+      "division": {
+        "id": 2,
+        "name": "Administration"
+      },
+      "degree": {
+        "id": 3,
+        "name": "Bachelor"
+      },
+      "position": {
+        "id": 4,
+        "name": "Supervisor"
+      },
+      "id": 17
     }
   ]
 }
