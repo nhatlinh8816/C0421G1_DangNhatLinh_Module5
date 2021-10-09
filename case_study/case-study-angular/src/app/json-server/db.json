@@ -42,45 +42,46 @@
       "id": 6,
       "name": "Director"
     }
-  ],"division": [
-  {
-    "id": 1,
-    "name": "Sale-Makerting"
-  },
-  {
-    "id": 2,
-    "name": "Administration"
-  },
-  {
-    "id": 3,
-    "name": "Service"
-  },
-  {
-    "id": 4,
-    "name": "Management"
-  }
-],
-  "employees": [
+  ],
+  "division": [
     {
       "id": 1,
-      "name": "Linh",
-      "dOB": "1994-02-13",
-      "identityNum": "123",
-      "phoneNum": "123",
-      "email": "123",
-      "address": "Hà Nội",
-      "salary": 1000,
+      "name": "Sale-Makerting"
+    },
+    {
+      "id": 2,
+      "name": "Administration"
+    },
+    {
+      "id": 3,
+      "name": "Service"
+    },
+    {
+      "id": 4,
+      "name": "Management"
+    }
+  ],
+  "employees": [
+    {
+      "id": 15,
+      "name": "Thi Van Anh Nguyen 123",
+      "dOB": "2021-10-15",
+      "identityNum": "1234567894",
+      "salary": 123,
+      "phoneNum": "0909363284",
+      "email": "vananh191090@gmail.com",
+      "address": "Ha Noi",
+      "division": {
+        "id": 2,
+        "name": "Administration"
+      },
       "degree": {
         "id": 1,
         "name": "Intermediate"
       },
       "position": {
-      "id": 4,
-      "name": "Supervisor"
-    },
-      "division": {
-        "id": 4,
-        "name": "Management"
+        "id": 3,
+        "name": "Specialist"
       }
     }
   ]

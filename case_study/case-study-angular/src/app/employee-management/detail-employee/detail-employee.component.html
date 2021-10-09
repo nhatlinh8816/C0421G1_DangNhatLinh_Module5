@@ -1,0 +1,50 @@
+<div class="col-lg-12 text-center">
+  <h3>DETAIL INFORMATION</h3>
+</div>
+<form class="row g-3">
+  <div class="col-md-6">
+    <label for="id" class="form-label">ID</label>
+    <input input type="text" class="form-control" id="id"  [value]="employeeDetail.id" readonly>
+  </div>
+  <div class="col-md-6">
+    <label for="name" class="form-label">Name</label>
+    <input input type="text" class="form-control" id="name" [value]="employeeDetail.name" readonly>
+  </div>
+  <div class="col-md-6">
+    <label for="dOb" class="form-label">Date Of Birth</label>
+    <input type="date" class="form-control" id="dOb" [value]="employeeDetail.dOB" readonly>
+  </div>
+  <div class="col-md-6">
+    <label for="idenNumber" class="form-label">Identity Number</label>
+    <input type="text" class="form-control" id="idenNumber" [value]="employeeDetail.identityNum" readonly >
+  </div>
+  <div class="col-md-6">
+    <label for="salary" class="form-label">Salary</label>
+    <input type="number" class="form-control" id="salary" [value]="employeeDetail.salary" readonly>
+  </div>
+  <div class="col-md-6">
+    <label for="phoneNumber" class="form-label">Phone Number</label>
+    <input type="text" class="form-control" id="phoneNumber" [value]="employeeDetail.phoneNum" readonly>
+  </div>
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" class="form-control" id="email" [value]="employeeDetail.email" readonly>
+  </div>
+  <div class="col-md-6">
+    <label for="address" class="form-label">Address</label>
+    <input type="text" class="form-control" id="address" [value]="employeeDetail.address" readonly>
+  </div>
+  <div class="col-md-4">
+    <label for="inputDivision" class="form-label">Division</label>
+    <input type="text" class="form-control" id="inputDivision" [value]="employeeDetail.division.name" readonly>
+  </div>
+  <div class="col-md-4">
+    <label for="inputDegree"  class="form-label">Degree</label>
+    <input type="text" class="form-control" id="inputDegree" [value]="employeeDetail.degree.name" readonly>
+  </div>
+  <div class="col-md-4">
+    <label for="inputPosition" class="form-label">Position</label>
+    <input type="text" class="form-control" id="inputPosition" [value]="employeeDetail.position.name" readonly>
+  </div>
+  <div class="col-md-12"></div>
+</form>

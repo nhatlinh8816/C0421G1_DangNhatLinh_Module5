@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Employee} from '../../model/employee/Employee';
 import {EmployeeServiceService} from '../../service-management/employee/employee-service.service';
-import {EmployeeDegreeServiceService} from '../../service-management/employee/employee-degree-service.service';
-import {EmployeeDivisionServiceService} from '../../service-management/employee/employee-division-service.service';
-import {EmployeePositionServiceService} from '../../service-management/employee/employee-position-service.service';
-import {EmployeeDegree} from '../../model/employee/EmployeeDegree';
-import {EmployeePosition} from '../../model/employee/EmployeePosition';
-import {EmployeeDivision} from '../../model/employee/EmployeeDivision';
+import {Router} from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-list-employee',
@@ -15,7 +13,9 @@ import {EmployeeDivision} from '../../model/employee/EmployeeDivision';
 })
 export class ListEmployeeComponent implements OnInit {
   employees: Employee []|any;
-  constructor(private employeeServiceService: EmployeeServiceService) {
+  id: number;
+  name: string;
+  constructor(private employeeServiceService: EmployeeServiceService, private router: Router) {
     this.employees = this.employeeServiceService.findAll().subscribe(next => {
       console.log(next);
       this.employees = next;
@@ -29,4 +29,17 @@ export class ListEmployeeComponent implements OnInit {
 
   }
 
+  sendId(id: any) {
+    this.employeeServiceService.findById(id).subscribe(list => {
+      this.name = list.name;
+      this.id = list.id;
+    });
+  }
+
+  deleteCustomer(id: number) {
+    this.employeeServiceService.delete(id).subscribe(() => {
+      alert('Delete Success');
+      this.router.navigateByUrl('/employee/list');
+    });
+  }
 }

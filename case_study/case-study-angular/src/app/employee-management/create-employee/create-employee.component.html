@@ -1,198 +1,88 @@
+<div class="col-lg-12 text-center">
+  <h3>PLEASE INPUT INFORMATION</h3>
+</div>
+<form class="row g-3" [formGroup]="employeeForm" (ngSubmit)="create()">
+  <div class="col-md-6">
+    <label for="name" class="form-label">Name</label>
+    <input input type="text" formControlName="name" class="form-control" id="name">
+    <div class="row" style="color: red" *ngIf="employeeForm.controls.name.hasError('required') && employeeForm.controls.name.dirty">
+      Name must not be empty
+    </div>
+  </div>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-<div class="container-fluid"  style="background-color: #20c997">
-  <div class="row">
-    <div class="col-lg-10 my-0">
-      <img src="/assets/image/logo-furama.png" width="80px" height="80px" alt="logo">
+  <div class="col-md-6">
+    <label for="dOb" class="form-label">Date Of Birth</label>
+    <input type="date" formControlName="dOB" class="form-control" id="dOb">
+    <p class="text-danger"></p>
+  </div>
+  <div class="col-md-6">
+    <label for="idenNumber" class="form-label">Identity Number</label>
+    <input type="text" formControlName="identityNum" class="form-control" id="idenNumber">
+    <div style="color: red" *ngIf="employeeForm.controls.identityNum.hasError('required') && employeeForm.controls.identityNum.dirty">
+      Identity must not be empty
+    </div>
+    <div style="color: red;" *ngIf="employeeForm.controls.identityNum.hasError('pattern') && employeeForm.controls.identityNum.dirty">
+      Identity format follow XXXXXXXXX or XXXXXXXXXXXX (X: 0-9)
     </div>
   </div>
-</div>
-<nav class="navbar navbar-expand-lg navbar-light p-3 mb-2 bg-success text-white ">
-  <div class="col-lg-1"></div>
-  <div class="container-fluid col-lg-11 ">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5 text-white">
-        <li class="nav-item ms-1 me-4">
-          <a class="nav-link active text-white" aria-current="page" routerLink="">Home</a>
-        </li>
-        <li class="nav-item dropdown mx-4">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-             data-bs-toggle="dropdown" aria-expanded="false">
-            Employee
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="employee/create" >Create new Employee</a></li>
-            <li><a class="dropdown-item" routerLink="employee/list">Show List of Employee</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown mx-4">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown1" role="button"
-             data-bs-toggle="dropdown" aria-expanded="false">
-            Customer
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-            <li><a class="dropdown-item" >Create new Customer</a></li>
-            <li><a class="dropdown-item" >Show List of Customer</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown mx-4">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown2" role="button"
-             data-bs-toggle="dropdown" aria-expanded="false">
-            Service
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-            <li><a class="dropdown-item" >Create new Service</a></li>
-            <li><a class="dropdown-item" >Show List of Service</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown mx-4">
-          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown3" role="button"
-             data-bs-toggle="dropdown" aria-expanded="false">
-            Contract
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-            <li><a class="dropdown-item" href="#">Create new Contract</a></li>
-            <li><a class="dropdown-item" href="#">Show List of Contract</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="d-flex me-3 mt-2">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+  <div class="col-md-6">
+    <label for="salary" class="form-label">Salary</label>
+    <input type="number" formControlName="salary" class="form-control" id="salary">
+    <div style="color: red" *ngIf="employeeForm.controls.salary.hasError('invalid') && employeeForm.controls.salary.dirty">Salary must be greater than 0
     </div>
   </div>
-</nav>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-2 col-sm-12 col-md-12 p-0 btn px-0 " >
-      <ul class="list-group ">
-        <li class="list-group-item bg-success text-white ">An item</li>
-        <li class="list-group-item bg-success text-white">A second item</li>
-        <li class="list-group-item bg-success text-white">A third item</li>
-        <li class="list-group-item bg-success text-white">A fourth item</li>
-        <li class="list-group-item bg-success text-white">A fifth one</li>
-        <li class="list-group-item bg-success text-white">An item</li>
-        <li class="list-group-item bg-success text-white">An item</li>
-        <li class="list-group-item bg-success text-white">An item</li>
-        <li class="list-group-item bg-success text-white">An item</li>
-        <li class="list-group-item bg-success text-white">An item</li>
-      </ul>
-    </div>
-    <div class="col-lg-10">
-      <div class="col-lg-12 text-center">
-        <h3>PLEASE INPUT INFORMATION</h3>
-      </div>
-      <form class="row g-3" [formGroup]="employeeForm">
-        <div class="col-md-6">
-          <label for="name" class="form-label">Name</label>
-          <input input type="text" formControlName="name" class="form-control" id="name">
-          <p class="text-danger"></p>
-        </div>
-        <div *ngIf="employeeForm.controls.name.hasError('required') && employeeForm.controls.name.dirty">
-          Name must not be empty
-        </div>
-        <div *ngIf="employeeForm.controls.name.hasError('pattern') && employeeForm.controls.name.dirty">
-          Name must be no contain number or special character
-        </div>
-        <div class="col-md-6">
-          <label for="dOb" class="form-label">Date Of Birth</label>
-          <input type="date" formControlName="dOB" class="form-control" id="dOb">
-          <p class="text-danger"></p>
-        </div>
-        <div class="col-md-6">
-          <label for="idenNumber" class="form-label">Identity Number</label>
-          <input type="text" formControlName="identityNum"  class="form-control" id="idenNumber">
-          <p class="text-danger"></p>
-        </div>
-        <div *ngIf="employeeForm.controls.identityNum.hasError('required') && employeeForm.controls.identityNum.dirty">
-          Identity must not be empty
-        </div>
-        <div *ngIf="employeeForm.controls.identityNum.hasError('pattern') && employeeForm.controls.identityNum.dirty">
-          Identity format follow XXXXXXXXX or XXXXXXXXXXXX (X: 0-9)
-        </div>
-        <div class="col-md-6">
-          <label for="salary" class="form-label">Salary</label>
-          <input type="text" formControlName="salary" class="form-control" id="salary">
-        </div>
-        <div style="color: red" *ngIf="employeeForm.controls.salary.hasError('invalid') &&
-employeeForm.controls.salary.dirty">Salary must be greater than 0
-        </div>
-        <div class="col-md-6">
-          <label for="phoneNumber" class="form-label">Phone Number</label>
-          <input type="text" formControlName="phoneNum" class="form-control" id="phoneNumber">
-        </div>
-        <div *ngIf="employeeForm.controls.phoneNum.hasError('pattern') && employeeForm.controls.phoneNum.dirty">
-          Phone Number format follow 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx
-        </div>
-        <div class="col-md-6">
-          <label for="email" class="form-label">Email</label>
-          <input type="text" formControlName="email"  class="form-control" id="email">
-        </div>
-        <div *ngIf="employeeForm.controls.email.hasError('email') && employeeForm.controls.email.dirty">
-          Email not required format
-        </div>
-        <div class="col-md-6">
-          <label for="address" class="form-label">Address</label>
-          <input type="text" formControlName="address" class="form-control" id="address">
-          <p class="text-danger"></p>
-        </div>
-        <div *ngIf="employeeForm.controls.address.hasError('required') && employeeForm.controls.address.dirty">
-          Address must not be empty
-        </div>
-        <div class="col-md-3">
-          <label for="inputDivision" class="form-label">Division</label>
-          <select id="inputDivision" class="form-select" >
-            <option selected [value]="null" disabled>Choose...</option>
-            <option *ngFor="let divisionObj of division" [value]="divisionObj.id" >
-              {{divisionObj.name}}
-            </option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <label for="inputDegree" class="form-label">Degree</label>
-          <select id="inputDegree" class="form-select" >
-            <option selected [value]="null" disabled>Choose...</option>
-            <option *ngFor="let degreeObj of degree" [value]="degreeObj.id" >
-              {{degreeObj.name}}
-            </option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <label for="inputPosition" class="form-label">Position</label>
-          <select id="inputPosition" class="form-select" >
-            <option selected [value]="null" disabled>Choose...</option>
-            <option *ngFor="let positionObj of position" [value]="positionObj.id" >
-              {{positionObj.name}}
-            </option>
-          </select>
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-success text-white">Create</button>
-        </div>
-        <div class="col-12">
-        </div>
-      </form>
-    </div>
-</div>
-</div>
-<div class="container-fluid ">
-  <div class="row">
-    <div class="col-lg-12 p-3 mb-2 bg-success text-white" style="text-align: center">
-      <p>&copy; 2021 furama.com.vn. All rights reserved.</p>
+  <div class="col-md-6">
+    <label for="phoneNumber" class="form-label">Phone Number</label>
+    <input type="text" formControlName="phoneNum" class="form-control" id="phoneNumber">
+    <div style="color: red" *ngIf="employeeForm.controls.phoneNum.hasError('pattern') && employeeForm.controls.phoneNum.dirty">
+      Phone Number format follow 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx
     </div>
   </div>
-</div>
-</body>
-</html>
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" formControlName="email" class="form-control" id="email">
+    <div style="color: red" *ngIf="employeeForm.controls.email.hasError('email') && employeeForm.controls.email.dirty">
+      Email not required format
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="address" class="form-label">Address</label>
+    <input type="text" formControlName="address" class="form-control" id="address">
+    <p class="text-danger"></p>
+    <div style="color: red" *ngIf="employeeForm.controls.address.hasError('required') && employeeForm.controls.address.dirty">
+      Address must not be empty
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="inputDivision" class="form-label">Division</label>
+    <select id="inputDivision" formControlName="division"  class="form-select">
+      <option selected [value]="null" disabled>Choose...</option>
+      <option *ngFor="let divisionObj of division" [ngValue]="divisionObj" >
+        {{divisionObj.name}}
+      </option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label for="inputDegree"  class="form-label">Degree</label>
+    <select id="inputDegree" formControlName="degree"  class="form-select">
+      <option selected [value]="null" disabled>Choose...</option>
+      <option *ngFor="let degreeObj of degree" [ngValue]="degreeObj" >
+        {{degreeObj.name}}
+      </option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label for="inputPosition" class="form-label">Position</label>
+    <select id="inputPosition" formControlName="position"  class="form-select">
+      <option selected [value]="null" disabled>Choose...</option>
+      <option *ngFor="let positionObj of position" [ngValue]="positionObj" >
+        {{positionObj.name}}
+      </option>
+    </select>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-success text-white" *ngIf="employeeForm.valid">Create</button>
+  </div>
+  <div class="col-12">
+  </div>
+</form>
