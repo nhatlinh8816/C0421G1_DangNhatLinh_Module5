@@ -1,0 +1,55 @@
+<div class="col-lg-12 text-center">
+  <h3>PLEASE INPUT INFORMATION</h3>
+</div>
+<form class="row g-3" [formGroup]="customerForm" (ngSubmit)="create()">
+  <div class="col-md-6">
+    <label for="name" class="form-label">Name</label>
+    <input input type="text" formControlName="name" class="form-control" id="name">
+    <div class="row" style="color: red" *ngIf="customerForm.controls.name.hasError('required') && customerForm.controls.name.dirty">
+      Name must not be empty
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="dOb" class="form-label">Date Of Birth</label>
+    <input type="date" formControlName="dOB" class="form-control" id="dOb">
+    <p class="text-danger"></p>
+  </div>
+  <div class="col-md-6">
+    <label for="idenNumber" class="form-label">Code</label>
+    <input type="text" formControlName="code" class="form-control" id="idenNumber">
+    <div style="color: red" *ngIf="customerForm.controls.code.hasError('required') && customerForm.controls.code.dirty">
+      Code:xxxx
+    </div>
+    <div style="color: red;" *ngIf="customerForm.controls.code.hasError('pattern') && customerForm.controls.code.dirty">
+      Code format follow XXXXXXXXX or XXXXXXXXXXXX (X: 0-9)
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="phoneNumber" class="form-label">Phone Number</label>
+    <input type="text" formControlName="phoneNum" class="form-control" id="phoneNumber">
+    <div style="color: red" *ngIf="customerForm.controls.phoneNum.hasError('pattern') && customerForm.controls.phoneNum.dirty">
+      Phone Number format follow 090xxxxxxx or 091xxxxxxx or (84)+90xxxxxxx or (84)+91xxxxxxx
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" formControlName="email" class="form-control" id="email">
+    <div style="color: red" *ngIf="customerForm.controls.email.hasError('email') && customerForm.controls.email.dirty">
+      Email not required format
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="inputDivision" class="form-label">Type</label>
+    <select id="inputDivision" formControlName="typeCustomer"  class="form-select">
+      <option selected [value]="null" disabled>Choose...</option>
+      <option *ngFor="let typeObj of typeCustomer" [ngValue]="typeObj" >
+        {{typeObj.name}}
+      </option>
+    </select>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-success text-white" *ngIf="customerForm.valid">Create</button>
+  </div>
+  <div class="col-12">
+  </div>
+</form>
