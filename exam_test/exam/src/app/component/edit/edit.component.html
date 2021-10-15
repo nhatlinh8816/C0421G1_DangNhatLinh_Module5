@@ -1,0 +1,48 @@
+<div class="col-lg-12 text-center">
+  <h3>PLEASE INPUT INFORMATION</h3>
+</div>
+<form class="row g-3" [formGroup]="productForm" (ngSubmit)="update(id)">
+  <input input type="text" formControlName="id" class="form-control" hidden>
+  <div class="col-md-6">
+    <label for="name" class="form-label">Name</label>
+    <input input type="text" formControlName="name" class="form-control" id="name">
+    <div class="row" style="color: red" *ngIf="productForm.controls.name.hasError('required') && productForm.controls.name.dirty">
+      Name must not be empty
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="dOb" class="form-label">Code</label>
+    <input type="text" formControlName="code" class="form-control" id="dOb">
+    <div class="row" style="color: red" *ngIf="productForm.controls.code.hasError('required') && productForm.controls.code.dirty">
+      Code must not be empty
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="idenNumber" class="form-label">Description</label>
+    <input type="text" formControlName="description" class="form-control" id="idenNumber">
+    <div style="color: red" *ngIf="productForm.controls.description.hasError('required') && productForm.controls.description.dirty">
+      Description must not be empty
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label  class="form-label">Price</label>
+    <input type="number" formControlName="price" class="form-control" id="price">
+    <div style="color: red" *ngIf="productForm.controls.price.hasError('invalid') && productForm.controls.price.dirty">Price must be greater than 0
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="inputPosition" class="form-label">Type</label>
+    <select id="inputPosition" formControlName="type"  class="form-select" [compareWith]="compareFn">
+      <option selected [value]="null" disabled>Choose...</option>
+      <option *ngFor="let obj of types" [ngValue]="obj" >
+        {{obj.name}}
+      </option>
+    </select>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-success text-white" *ngIf="productForm.valid">Edit</button>
+  </div>
+  <div class="col-12">
+  </div>
+</form>
+

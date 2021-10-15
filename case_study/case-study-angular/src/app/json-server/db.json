@@ -63,14 +63,57 @@
   ],
   "employees": [
     {
-      "id": 15,
-      "name": "Thi Van Anh Nguyen 123",
-      "dOB": "2021-10-15",
+      "name": "Tom",
+      "dOB": "2021-10-13",
+      "identityNum": "1234567894",
+      "salary": 1234,
+      "phoneNum": "0909363284",
+      "email": "vananh191090@gmail.com",
+      "address": "Ha Noi",
+      "division": {
+        "id": 1,
+        "name": "Sale-Makerting"
+      },
+      "degree": {
+        "id": 2,
+        "name": "College"
+      },
+      "position": {
+        "id": 2,
+        "name": "Waiter"
+      },
+      "id": 18
+    },
+    {
+      "name": "John",
+      "dOB": "2021-10-01",
       "identityNum": "1234567894",
       "salary": 123,
       "phoneNum": "0909363284",
       "email": "vananh191090@gmail.com",
       "address": "Ha Noi",
+      "division": {
+        "id": 1,
+        "name": "Sale-Makerting"
+      },
+      "degree": {
+        "id": 4,
+        "name": "Master"
+      },
+      "position": {
+        "id": 4,
+        "name": "Supervisor"
+      },
+      "id": 19
+    },
+    {
+      "name": "Mark",
+      "dOB": "2021-10-14",
+      "identityNum": "1234123123",
+      "salary": 1234,
+      "phoneNum": "0901234567",
+      "email": "dangnhatlinh0213@gmail.com",
+      "address": "D6-TT Vạn Phúc",
       "division": {
         "id": 2,
         "name": "Administration"
@@ -82,51 +125,8 @@
       "position": {
         "id": 3,
         "name": "Specialist"
-      }
-    },
-    {
-      "name": "Thi Van Anh Nguyen",
-      "dOB": "2021-10-07",
-      "identityNum": "1234567894",
-      "salary": 123,
-      "phoneNum": "0909363284",
-      "email": "vananh191090@gmail.com",
-      "address": "Ha Noi",
-      "division": {
-        "id": 2,
-        "name": "Administration"
       },
-      "degree": {
-        "id": 2,
-        "name": "College"
-      },
-      "position": {
-        "id": 3,
-        "name": "Specialist"
-      },
-      "id": 16
-    },
-    {
-      "name": "Thi Van 1995 1233",
-      "dOB": "2021-10-23",
-      "identityNum": "1234567894",
-      "salary": 123123,
-      "phoneNum": "0909363284",
-      "email": "vananh191090@gmail.com",
-      "address": "Ha Noi",
-      "division": {
-        "id": 2,
-        "name": "Administration"
-      },
-      "degree": {
-        "id": 3,
-        "name": "Bachelor"
-      },
-      "position": {
-        "id": 4,
-        "name": "Supervisor"
-      },
-      "id": 17
+      "id": 20
     }
   ]
 }

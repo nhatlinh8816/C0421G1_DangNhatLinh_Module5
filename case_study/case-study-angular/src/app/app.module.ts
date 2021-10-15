@@ -10,10 +10,6 @@ import { EditCustomerComponent } from './customer-management/edit-customer/edit-
 import { CreateEmployeeComponent } from './employee-management/create-employee/create-employee.component';
 import { EditEmployeeComponent } from './employee-management/edit-employee/edit-employee.component';
 import { ListEmployeeComponent } from './employee-management/list-employee/list-employee.component';
-import { ListContractComponent } from './contract-management/list-contract/list-contract.component';
-import { EditContractComponent } from './contract-management/edit-contract/edit-contract.component';
-import { DeleteContractComponent } from './contract-management/delete-contract/delete-contract.component';
-import { CreateContractComponent } from './contract-management/create-contract/create-contract.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
@@ -38,10 +34,6 @@ import {NgxPaginationModule} from 'ngx-pagination';
     CreateEmployeeComponent,
     EditEmployeeComponent,
     ListEmployeeComponent,
-    ListContractComponent,
-    EditContractComponent,
-    DeleteContractComponent,
-    CreateContractComponent,
     HomePageComponent,
     HeaderComponent,
     NavbarComponent,

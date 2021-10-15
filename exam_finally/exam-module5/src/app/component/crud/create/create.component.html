@@ -1,0 +1,93 @@
+<div class="col-lg-12 text-center">
+  <h3>PLEASE INPUT INFORMATION</h3>
+</div>
+<form class="row g-3" [formGroup]="carForm" (ngSubmit)="create()">
+  <div class="col-md-6">
+    <label for="name" class="form-label">Code</label>
+    <input input type="text" formControlName="code" class="form-control" id="name" >
+    <div class="row" style="color: red" *ngIf="carForm.controls.code.hasError('required') && carForm.controls.code.dirty">
+      Name must not be empty
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Type</label>
+    <select formControlName="type"   class="form-select">
+      <option selected [value]="null" disabled  >Choose...</option>
+      <option *ngFor="let obj of type" [ngValue]="obj" >
+        {{obj.name}}
+      </option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="idenNumber" class="form-label">Name</label>
+    <input type="text" formControlName="name" class="form-control" id="idenNumber">
+    <div style="color: red" *ngIf="carForm.controls.name.hasError('required') && carForm.controls.name.dirty">
+      Name must not be empty
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="inputDivision2" class="form-label">Start</label>
+    <select id="inputDivision2" formControlName="start"  class="form-select">
+      <option selected [value]="null" disabled  >Choose...</option>
+      <option *ngFor="let obj of start" [ngValue]="obj" >
+        {{obj.name}}
+      </option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label for="inputDivision3" class="form-label">End</label>
+    <select id="inputDivision3" formControlName="end"  class="form-select">
+      <option selected [value]="null" disabled  >Choose...</option>
+      <option *ngFor="let obj of end" [ngValue]="obj" >
+        {{obj.name}}
+      </option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="phoneNumber" class="form-label">Phone Number</label>
+    <input type="text" formControlName="phone" class="form-control" id="phoneNumber">
+    <div style="color: red" *ngIf="carForm.controls.phone.hasError('pattern') && carForm.controls.phone.dirty">
+      Phone Number format follow 090xxxxxxx or 093xxxxxxx or 097xxxxxxx
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" formControlName="email" class="form-control" id="email">
+    <div style="color: red" *ngIf="carForm.controls.email.hasError('email') && carForm.controls.email.dirty">
+      Email not required format
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="address" class="form-label">Start Time</label>
+    <input type="time" formControlName="timeStart" class="form-control" id="address">
+    <p class="text-danger"></p>
+    <div style="color: red" *ngIf="carForm.controls.timeStart.hasError('required') && carForm.controls.timeStart.dirty">
+      timeStart must not be empty
+    </div>
+<!--    <div style="color: red" *ngIf="carForm.controls.timeStart.hasError('invalid') && carForm.controls.timeStart.dirty"> 5:00 ~ 23:00-->
+<!--    </div>-->
+  </div>
+  <div class="col-md-6">
+    <label for="address1" class="form-label">End Time</label>
+    <input type="time" formControlName="timeEnd" class="form-control" id="address1">
+    <p class="text-danger"></p>
+    <div style="color: red" *ngIf="carForm.controls.timeEnd.hasError('required') && carForm.controls.timeEnd.dirty">
+      time end must not be empty
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <button type="submit" class="btn btn-success text-white" *ngIf="carForm.valid">Create</button>
+      </div>
+      <div class="col-6">
+        <a class="btn btn-success" [routerLink]="['/car/list']" role="button">Back to list</a>
+      </div>
+    </div>
+  </div>
+  <!--  <div class="col-12">-->
+  <!--    <button type="submit" class="btn btn-success text-white" *ngIf="carForm.valid">Update</button>-->
+  <!--  </div>-->
+  <div class="col-12">
+  </div>
+</form>

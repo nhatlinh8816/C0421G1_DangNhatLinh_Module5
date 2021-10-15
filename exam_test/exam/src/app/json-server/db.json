@@ -1,0 +1,40 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "VSMART",
+      "code": "123123",
+      "description": "99%",
+      "price": 123,
+      "type": {
+        "id": 1,
+        "name": "Electric"
+      }
+    },
+    {
+      "name": "OPPO",
+      "code": "123",
+      "description": "99%",
+      "price": 2345,
+      "type": {
+        "id": 1,
+        "name": "Electric"
+      },
+      "id": 2
+    }
+  ],
+  "typeProduct": [
+    {
+      "id": 1,
+      "name": "Electric"
+    },
+    {
+      "id": 2,
+      "name": "Home"
+    },
+    {
+      "id": 3,
+      "name": "Cleaning"
+    }
+  ]
+}

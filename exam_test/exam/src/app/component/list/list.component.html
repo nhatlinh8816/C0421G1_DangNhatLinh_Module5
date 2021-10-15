@@ -1,39 +1,29 @@
 <div class="col-lg-12 text-center">
   <h3>EMPLOYEE LIST</h3>
 </div>
-<input type="text" [(ngModel)]="nameView1" (ngModelChange)="Search()" placeholder="Enter name to search">
+<!--<input type="text" [(ngModel)]="nameView1" (ngModelChange)="Search()" placeholder="Enter name to search">-->
 <table class="table">
   <thead>
   <tr>
     <th scope="col">Id</th>
     <th scope="col">Name</th>
-    <th scope="col">DOB</th>
-    <th scope="col">Identity Number</th>
-    <th scope="col">Salary</th>
-    <th scope="col">Phone Number</th>
-    <th scope="col">Email</th>
-    <th scope="col">Address</th>
-    <th scope="col">Division</th>
-    <th scope="col">Position</th>
-    <th scope="col">Degree</th>
+    <th scope="col">Code</th>
+    <th scope="col">Description</th>
+    <th scope="col">Price</th>
+    <th scope="col">Type</th>
     <th scope="col" colspan="3" class="text-center">Action</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let items of employees | paginate: { itemsPerPage: 2, currentPage: p }" >
+  <tr *ngFor="let items of products  | paginate: { itemsPerPage: 1, currentPage: p }" >
     <td>{{items.id}}</td>
     <td>{{items.name}}</td>
-    <td>{{items.dOB}}</td>
-    <td>{{items.identityNum}}</td>
-    <td>{{items.salary}}</td>
-    <td>{{items.phoneNum}}</td>
-    <td>{{items.email}}</td>
-    <td>{{items.address}}</td>
-    <td>{{items.division.name}}</td>
-    <td>{{items.position.name}}</td>
-    <td>{{items.degree.name}}</td>
+    <td>{{items.code}}</td>
+    <td>{{items.description}}</td>
+    <td>{{items.price}}</td>
+    <td>{{items.type.name}}</td>
     <td>
-      <a class="btn btn-success" [routerLink]="['/employee/edit',items.id]" role="button">Edit</a>
+      <a class="btn btn-success" [routerLink]="['/product/edit',items.id]" role="button">Edit</a>
     </td>
     <td>
       <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
@@ -41,7 +31,7 @@
       </button>
     </td>
     <td>
-      <a class="btn btn-success" [routerLink]="['/employee/detail',items.id]" role="button">Detail</a>
+      <a class="btn btn-success" [routerLink]="['/product/detail',items.id]" role="button">Detail</a>
     </td>
   </tr>
   </tbody>
@@ -62,9 +52,10 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteCustomer(id)">Yes
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteProduct(id)">Yes
         </button>
       </div>
     </div>
   </div>
 </div>
+

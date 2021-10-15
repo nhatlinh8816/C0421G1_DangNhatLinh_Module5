@@ -1,0 +1,77 @@
+<div class="col-lg-12 text-center">
+  <h3>CAR LIST</h3>
+</div>
+<!--<form (ngSubmit)="Search()">-->
+<!--  <input type="text" [(ngModel)]="name" >-->
+<!--  <button type="submit">Search</button>-->
+<!--</form>-->
+<div class="row">
+  <div class="col-5">
+    <div class="input-group input-group-sm mb-3 ">
+      <span class="input-group-text btn-success" id="inputGroup-sizing-sm">Search By Name</span>
+      <input type="text" [(ngModel)]="name" placeholder="Please input name" (change)="Search()" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Số xe</th>
+    <th scope="col">Loại xe</th>
+    <th scope="col">Tên nhà xe</th>
+    <th scope="col">Điểm đi</th>
+    <th scope="col">Điểm đến</th>
+    <th scope="col">Số điện thoại</th>
+    <th scope="col">Email</th>
+    <th scope="col">Giờ đi</th>
+    <th scope="col">Giờ đến</th>
+    <th scope="col" colspan="2" class="text-center">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let items of cars | paginate: { itemsPerPage: 2, currentPage: p }" >
+    <td>{{items.id}}</td>
+    <td>{{items.code}}</td>
+    <td>{{items.type.name}}</td>
+    <td>{{items.name}}</td>
+    <td>{{items.start.name}}</td>
+    <td>{{items.end.name}}</td>
+    <td>{{items.phone}}</td>
+    <td>{{items.email}}</td>
+    <td>{{items.timeStart}}</td>
+    <td>{{items.timeEnd}}</td>
+    <td>
+      <a class="btn btn-success" [routerLink]="['/car/edit',items.id]" role="button">Edit</a>
+    </td>
+    <td>
+      <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              (click)="sendId(items.id)">Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="row">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+<!--modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn có đồng ý xóa thông tin của xe khách số xe <span style="color: red">{{code}}</span> ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteCustomer(id)">Yes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
